@@ -5,20 +5,20 @@ import time
 
 
 #Function that handles comment feature
-def comment(object_id,msg,tok):
+def comment(object_id,msg,tok=None):
 	print "+--------------+"
 	print "|Comment Posted|"
 	print "+--------------+"
 	print msg
 
 #Fuction that handles "liking" an object	
-def like(object_id,tok):
+def like(object_id,tok=None):
 	print "+-----+"
 	print "|Liked|"
 	print "+-----+"
 	
 #Update the status or post a message on a friend's wall	
-def update(msg,tok,profile_id="me"):
+def update(msg,tok=None,profile_id="me"):
 	print "+-------------+"
 	print "|Status Posted|"
 	print "+-------------+"
@@ -50,6 +50,7 @@ def get_feed(tok):
 	#NOTE: the returned time string is in UTC time zone and not IST
 	
 	job['id'] = '789078080_987987890' #Object Id of the status object of facebook
+	job ['name'] = "Super Man" #Assuming 'Super Man' is your facebook name
 	final_feed.append(job)
 	
 	return final_feed

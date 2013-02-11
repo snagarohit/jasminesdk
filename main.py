@@ -30,7 +30,9 @@ while True:
 			
 		is_app_found = False #Used to know if we need to execute the default app if all remaining apps don't claim the input message	
 		for filename in refined_files:
+			print filename
 			app_file = environment.directory['apps']+filename
+			print app_file
 			module_handle = imp.load_source(filename[:-3],app_file)
 			if module_handle.check(item):
 				print "App Id: "+module_handle.app_id
